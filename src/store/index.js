@@ -1,15 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
-Vue.use(Vuex)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+import packageModule from './modules/package';
+
+Vue.use(Vuex, IconsPlugin, BootstrapVue);
+
+const store = new Vuex.Store({
   modules: {
-  }
-})
+    package: packageModule,
+  },
+});
+
+export default store;
